@@ -1,5 +1,7 @@
 /* Ryan Pallas */
 
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
 License: none (public domain)
@@ -47,3 +49,816 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+/* ----- VARIABLES ----- */
+:root {
+    --yellow: #f6df4a;
+    --teal: #55bcd5;
+    --purple: #9b26b0;
+    --blue: #499bd2;
+    --dark-gray: #222;
+    --light-gray: #eaeaea;
+    --white: #fff;
+    --black: #000;
+    --body-padding: 0 2rem;
+    font-size: 16px;
+}
+
+
+/* ----- GLOBAL STYLES ----- */
+body {
+    margin: 0 auto;
+    font-family: Montserrat, sans-serif;
+    color: var(--black);
+}
+
+h1, h2, h3 {
+    font-family: Molle;
+}
+
+h1 {
+    font-size: 3.25rem;
+}
+
+h2, h3 {
+    font-size: 2.5rem;
+}
+
+img {
+    width: 100%;
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#skip {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -100px;
+    text-decoration: none;
+    text-align: center;
+    color: var(--black);
+    background-color: var(--blue);
+    padding: 0.5rem;
+    transition: top 0.2s ease-in-out;
+    z-index: 1000;
+}
+
+#skip:focus {
+    top: 0.5rem;
+    outline: none;
+    border: 2px solid var(--black);
+}
+
+#skip:hover {
+    background-color: var(--white);
+}
+
+#skip:active {
+    background-color: var(--light-gray);
+}
+
+/* ----- HEADER STYLES ----- */
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: linear-gradient(0, var(--white), var(--teal));
+}
+
+#logo img {
+    width: 75%;
+}
+
+h1, header p {
+    width: calc(100vw - 4rem);
+    margin: 0 auto;
+}
+
+h1 {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    margin-top: 1.25rem;
+}
+
+header p {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+/* START NAV STYLES */
+nav {
+    align-self: flex-end;
+}
+
+#menu-toggle {
+    position: relative;
+}
+
+nav input {
+    display: none;
+}
+
+nav label {
+    display: block;
+    background-color: var(--yellow);
+    padding: 1rem;
+    text-align: center;
+}
+
+nav label:hover {
+    cursor: pointer;
+}
+
+nav ul {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.25s ease-in-out;
+    background-color: var(--teal);
+    text-align: center;
+}
+
+nav input:checked ~ ul {
+    height: calc(2rem * 4);
+}
+
+nav li {
+    width: 100%;
+    height: 2rem;
+    border-bottom: 1px solid var(--black);
+    font-weight: 500;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+nav a:hover {
+    color: var(--white);
+}
+
+nav a:focus-visible {
+    outline: 2px solid var(--white);
+}
+
+nav a:active {
+    color: var(--light-gray);
+}
+/* END NAV STYLES */
+
+
+/* ----- MAIN STYLES ----- */
+article {
+    display: grid;
+    row-gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+article h3 {
+    padding-bottom: 1rem;
+}
+
+/* START INTRO STYLES */
+#intro {
+    display: grid;
+    row-gap: 1rem;
+    line-height: 1.75rem;
+}
+
+#intro h2, #intro p {
+    margin: 0 auto;
+    width: calc(100vw - 4rem);
+}
+
+#img-grid {
+    display: grid;
+    row-gap: 0.75rem;
+}
+/* END INTRO STYLES */
+
+/* START PLAN STYLES */
+#plan {
+    padding: 1.5rem 2rem;
+    background-color: var(--yellow);
+}
+
+#plan div {
+    display: grid;
+    row-gap: 0.5rem;
+}
+
+#plan h4 {
+    font-size: 1.55rem;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#plan section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    background-color: var(--teal);
+    border: 0.25rem solid var(--white);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+#plan section a {
+    width: 60%;
+    padding: 1rem;  
+}
+
+#plan section a:hover {
+    outline: 2px solid var(--blue);
+}
+
+#plan section a:focus-visible {
+    outline: 2px solid var(--white);
+}
+/* END PLAN STYLES */
+
+/* START TESTIMONIALS STYLES */
+#testimonials div {
+    display: grid;  
+    row-gap: 0.75rem;
+}
+
+#testimonials section {
+    display: grid;
+    justify-items: center;
+}
+
+#testimonials img {
+    width: 55%;
+}
+
+#testimonials h4 {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 0.75rem 0 0.35rem;
+}
+
+#testimonials q, #testimonials p {
+    font-size: 1.25rem;
+}
+
+#testimonials q {
+    text-align: center;
+    font-style: italic;
+    quotes: auto;
+}
+/* END TESTIMONIALS STYLES */
+
+/* START ABOUT STYLES */
+#about {
+    background-color: var(--blue);
+}
+
+#about div {
+    display: grid;
+    row-gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+#about section {
+    display: grid;
+    row-gap: 0.5rem;
+    justify-items: center;
+    height: fit-content;
+}
+
+#about img {
+    height: 90px;
+}
+
+#about h4 {
+    font-size: 1.35rem;
+    font-weight: 500;
+}
+
+#about p {
+    font-size: 1.1rem;
+    text-align: center;
+}
+/* END ABOUT STYLES */
+
+/* START CONTACT FORM STYLES */
+#contact h3 span {
+    font-family: Montserrat, sans-serif;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+form div {
+    display: grid;
+}
+
+form label:not(fieldset label), form legend {
+    text-transform: uppercase;
+}
+
+form label, form legend {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.required {
+    color: var(--purple);
+}
+
+::placeholder {
+    color: var(--black);
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+form input, form select {
+    border: 0.25rem solid var(--purple);
+    height: 64px;
+    margin-bottom: 1.5rem;
+}
+
+form input {
+    font-size: 1.25rem;
+    padding-left: 1rem;
+}
+
+#nums fieldset {    
+    margin-bottom: 1.5rem;
+    border: 2px solid transparent;
+}
+
+#nums fieldset:focus-within {
+    outline: none;
+    border: 2px solid var(--blue);
+}
+
+#nums fieldset label {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    font-weight: 400;
+}
+
+#nums .radio-input input {
+    width: 4rem;
+    margin-bottom: 1rem;
+}
+
+input[type="radio"] {
+    appearance: none;
+    padding: 0;
+    border-radius: 50%;
+}
+
+input[type="radio"]:before {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    width: 70%;
+    height: 70%;
+    margin: 8.5px;
+    background-color: var(--white);
+}
+
+input[type="radio"]:checked:before {
+    background-color: var(--purple);
+}
+
+input[type="radio"]:hover, fieldset label:hover {
+    cursor: pointer;
+}
+
+input[type="radio"]:focus {
+    outline: none;
+}
+
+#selects select {
+    padding: 1rem;
+    font-size: 1.25rem;
+}
+
+input:not(input[type="radio"]):focus, select:focus {
+    outline: none;
+    border: 0.25rem solid var(--blue);
+}
+
+#mySubmit {
+    background-color: var(--purple);
+    color: var(--white);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+#mySubmit:hover {
+    cursor: pointer;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+#mySubmit:focus {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+#mySubmit:active {
+    background-color: var(--light-gray);
+}
+
+
+
+/* END CONTACT FORM STYLES */
+
+/* ----- FOOTER STYLES ----- */
+footer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: center;
+    padding: 1rem 0 1.5rem 0;
+    background-color: var(--light-gray);
+    color: var(--black);
+}
+
+footer p {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 0.85rem;
+}
+
+footer a:hover {
+    color: var(--purple);
+}
+
+
+/* ----- MEDIUM SCREENS ----- */
+@media screen and (min-width: 820px) {
+/* ----- GLOBAL STYLES ----- */
+
+
+
+/* ----- HEADER STYLES ----- */
+    header {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: repeat(3, auto);
+        row-gap: 1rem;
+        justify-items: center;
+        align-items: center;
+        padding: 2rem 0;
+    }
+
+    #logo {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        align-items: center;
+    }
+
+    #logo img {
+        width: 100%;
+    }
+
+    h1, header p {
+        width: initial;
+        margin: initial;
+    }
+
+    h1 {
+        grid-column: 2 / -1;
+        grid-row: 1 / 2;
+        justify-self: start;
+    }
+
+    header p {
+        grid-column: 2 / -1;
+        grid-row: 2 / 3;
+        justify-self: start;
+    }
+
+    /* START NAV STYLES */
+    nav {
+        grid-column: 1 / -1;
+        align-self: center;
+    }
+
+    nav label {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        column-gap: 1rem;
+        position: relative;
+        height: fit-content;
+        overflow: visible;
+        flex-direction: row;
+        background-color: transparent;
+        
+    }
+
+    nav li {
+        width: fit-content;
+        height: fit-content;
+        border-bottom: none;
+    }
+
+    nav a {
+        display: block;
+        width: 15vw;
+        max-width: 175px;
+        padding: 1rem;
+        background-color: var(--white);
+    }
+
+    nav a:hover {
+        color: var(--black);
+        background-color: var(--yellow);
+    }
+/* END NAV STYLES */
+
+
+/* ----- MAIN STYLES ----- */
+/* START INTRO STYLES */
+    #intro {
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    #intro h2, #intro p {
+        width: initial;
+        margin: initial;
+    }
+
+    #img-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        column-gap: 1rem;
+    }
+
+    #img-grid picture {
+        grid-column: 1 / -1;
+    }
+/* END INTRO STYLES */
+
+/* START PLAN STYLES */
+    #plan h3 {
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    #plan div {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        width: 80vw;
+        margin: 0 auto;
+    }
+/* END PLAN STYLES */
+
+/* START TESTIMONIALS STYLES */
+    #testimonials h3 {
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    #testimonials div {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 2rem;
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    #testimonials div section q {
+        padding: 0 2rem;
+    }
+/* END TESTIMONIALS STYLES */
+
+/* START ABOUT STYLES */
+    #about {
+        padding: 2rem;
+    }
+
+    #about h3 {
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    #about div {
+        grid-template-columns: repeat(4, 1fr);
+        width: 80vw;
+        margin: 0 auto;
+    }
+/* END ABOUT STYLES */
+
+/* START CONTACT FORM STYLES */
+    #contact {
+        width: 80vw;
+        margin: 0 auto;
+        padding-bottom: 1rem;
+    }
+
+    #nums fieldset {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #nums .radio-input input {
+        margin-bottom: 0;
+    }
+
+    #mySubmit {
+        width: 50%;
+        margin-left: 50%;
+    }
+/* END CONTACT FORM STYLES */
+
+
+/* ----- FOOTER STYLES ----- */
+    footer {
+        flex-direction: row;
+        align-items: normal;
+        justify-content: center;
+        column-gap: 1.5rem;
+    }
+
+    footer p, footer a {
+        font-size: 1rem;
+    }
+}
+
+
+/* ----- LARGE SCREENS ----- */
+@media screen and (min-width: 1920px) {
+/* ----- GLOBAL STYLES ----- */
+
+
+
+/* ----- HEADER STYLES ----- */
+    header {
+        padding-top: 0;
+    }
+
+    #logo {
+        grid-row: 2 / -1;
+    }
+
+    h1 {
+        grid-row: 2 / 3;
+    }
+
+    header p {
+        grid-row: 3 / -1;
+    }
+
+/* START NAV STYLES */
+    nav {
+        grid-column: 1 / -1;
+        justify-self: end;
+    }
+/* END NAV STYLES */
+
+
+/* ----- MAIN STYLES ----- */
+    #plan, #testimonials, #about, #contact {
+        padding: 4rem 0;
+    }
+
+/* START INTRO STYLES */
+    #intro {
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: auto auto 1fr;
+    }
+
+    #intro h2 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    #intro p {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        max-width: 65ch;
+    }
+
+    #img-grid {
+        grid-column: 2 / -1;
+        grid-row: 1 / -1;
+    }
+/* END INTRO STYLES */
+
+/* START PLAN STYLES */
+    #plan div {
+        display: flex;
+        justify-content: center;
+    }
+/* END PLAN STYLES */
+
+/* START TESTIMONIALS STYLES */
+    #testimonials div {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #testimonials img {
+        width: 40%;
+    }
+
+/* END TESTIMONIALS STYLES */
+
+/* START ABOUT STYLES */
+    #about div {
+        width: 50vw;
+        grid-template-columns: repeat(4, 1fr);
+    }
+/* END ABOUT STYLES */
+
+/* START CONTACT FORM STYLES */
+    form {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+    }
+
+    form label, form legend {
+        margin-bottom: 0;
+    }
+
+    form input, form select {
+        margin-bottom: 0;
+    }
+
+    #names {
+        grid-template-rows: 1.25rem 75px 2.25rem 75px 2.25rem 75px;
+        align-items: end;
+    }
+
+    #nums {
+        grid-template-rows: calc(1.25rem + 75px) 2.25rem 75px 2.25rem 75px;
+        align-items: end;
+    }
+
+    #nums fieldset {
+        margin-bottom: 0;
+    }
+
+    #nums .radio-input input {
+        margin-bottom: 0;
+    }
+
+    #selects {
+        grid-template-rows: 1.25rem 75px repeat(2, 2.25rem 75px);
+        align-items: end;
+    }
+
+    #selects select {
+        padding: 0;
+        height: 75px;
+    }
+
+    #mySubmit {
+        grid-row: -2 / -1;
+        height: 75px;
+    }
+
+/* END CONTACT FORM STYLES */
+
+
+/* ----- FOOTER STYLES ----- */
+    footer {
+        display: grid;
+        grid-template-columns: auto repeat(5, 1fr);
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+
+    footer a {
+        justify-self: end;
+    }
+
+    footer a:first-of-type {
+        grid-column: 5 / 6;
+    }
+
+    footer a:last-of-type {
+        grid-column: -2 / -1;
+    }
+}
+
