@@ -1,7 +1,5 @@
 /* Ryan Pallas */
 
-@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 /* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
 License: none (public domain)
@@ -52,12 +50,12 @@ table {
 
 /* ----- VARIABLES ----- */
 :root {
-    --yellow: #f6df4a;
-    --teal: #55bcd5;
-    --purple: #9b26b0;
-    --blue: #499bd2;
+    --yellow: #F6D64A;
+    --teal: #55BCD5;
+    --purple: #9B26B0;
+    --blue: #499BD2;
     --dark-gray: #222;
-    --light-gray: #eaeaea;
+    --light-gray: #EAEAEA;
     --white: #fff;
     --black: #000;
     --body-padding: 0 2rem;
@@ -68,12 +66,12 @@ table {
 /* ----- GLOBAL STYLES ----- */
 body {
     margin: 0 auto;
-    font-family: Montserrat, sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: var(--black);
 }
 
 h1, h2, h3 {
-    font-family: Molle;
+    font-family: "Molle", serif;
 }
 
 h1 {
@@ -161,6 +159,7 @@ header p {
 /* START NAV STYLES */
 nav {
     align-self: flex-end;
+    font-weight: 600;
 }
 
 #menu-toggle {
@@ -199,7 +198,6 @@ nav input:checked ~ ul {
 nav li {
     width: 100%;
     border-bottom: 1px solid var(--black);
-    font-weight: 500;
     padding: 1rem 0;    
     text-transform: uppercase;
 }
@@ -528,10 +526,8 @@ input:not(input[type="radio"]):focus, select:focus {
 #mySubmit:active {
     background-color: var(--light-gray);
 }
-
-
-
 /* END CONTACT FORM STYLES */
+
 
 /* ----- FOOTER STYLES ----- */
 footer {
@@ -811,15 +807,27 @@ footer a:hover {
         grid-row: 1 / 2;
         justify-self: end;
     }
+
+    nav li {
+        padding: 0;
+    }
 /* END NAV STYLES */
 
 
 /* ----- MAIN STYLES ----- */
-    #plan, #testimonials, #about, #contact {
+    #plan, 
+    #testimonials, 
+    #about, 
+    #contact {
         padding: 6rem 0;
     }
 
-    #plan div, #plan h3, #testimonials div, #testimonials h3, #about div, #about h3 {
+    #plan div, 
+    #plan h3, 
+    #testimonials div, 
+    #testimonials h3, 
+    #about div, 
+    #about h3 {
         width: 85vw;
     }
 
